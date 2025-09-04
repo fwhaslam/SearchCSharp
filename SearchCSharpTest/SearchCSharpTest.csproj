@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+    <ItemGroup>
+		
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+        <PackageReference Include="MSTest" Version="3.6.4" />
+
+        <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+
+        <!--<PackageReference Include="MSTest.TestAdapter" Version="2.2.5" />-->
+        <!--<PackageReference Include="MSTest.TestFramework" Version="2.2.5" />-->
+        <PackageReference Include="VerboseCSharp" Version="1.0.1" />
+        <!--<PackageReference Include="xunit.assert" Version="2.4.1" />-->
+
+		<ProjectReference Include="..\SearchCSharpAPI\SearchCSharpAPI.csproj" />
+		<ProjectReference Include="..\SearchCSharp\SearchCSharp.csproj" />
+
+    </ItemGroup>
+
+</Project>
