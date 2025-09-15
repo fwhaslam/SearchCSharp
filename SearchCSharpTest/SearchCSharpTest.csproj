@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <LangVersion>latest</LangVersion>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <!--<TargetFramework>net8.0</TargetFramework>-->
+    <!--<LangVersion>latest</LangVersion>-->
+    <!--<ImplicitUsings>enable</ImplicitUsings>-->
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
@@ -18,10 +18,13 @@
         <!--<PackageReference Include="MSTest.TestFramework" Version="2.2.5" />-->
         <PackageReference Include="VerboseCSharp" Version="1.0.1" />
         <!--<PackageReference Include="xunit.assert" Version="2.4.1" />-->
-
-		<ProjectReference Include="..\SearchCSharpAPI\SearchCSharpAPI.csproj" />
 		<ProjectReference Include="..\SearchCSharp\SearchCSharp.csproj" />
 
     </ItemGroup>
 
+    <!-- Ideally this only runs after the tests pass -->
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="DeployNugetPackageLocally.bat $(Version) $(ProjectKey)" />
+    </Target>
+    
 </Project>

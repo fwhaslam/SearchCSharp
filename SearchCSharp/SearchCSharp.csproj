@@ -1,18 +1,36 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<!--<TargetFrameworks>net48;net6.0</TargetFrameworks>-->
+		<ProjectName>$(ProjectKey)</ProjectName>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Authors>Frederick W Haslam</Authors>
+		<Company>FredsFriends</Company>
+		<Description>Tools to support Simple Search for Puzzle Development.
+see: https://github.com/fwhaslamSearchCSharp
+		</Description>
+		<!--<AssemblyName>$(ProjectName)_$(Version)</AssemblyName>-->
+		<PackageId>$(ProjectKey)</PackageId>
+		<UserSecretsId>70edb541-7ee0-4461-bca7-6e057db968e4</UserSecretsId>
+		<Copyright>Copyright (c) 2025 Frederick William Haslam born 1962 in the USA.</Copyright>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageProjectUrl>https://github.com/fwhaslam/SearchCSharp</PackageProjectUrl>
+		<Title>SearchCSharp</Title>
+		<RepositoryUrl>https://github.com/fwhaslam/SearchCSharp</RepositoryUrl>
+		<RepositoryType>https://github.com/fwhaslam/SearchCSharp</RepositoryType>
+		<!--<PackageReleaseNotes>$(ReleaseNotes)</PackageReleaseNotes>-->
+		<!--<PackageTags>test assert verbose unit integration functional acceptance assertion coverage</PackageTags>-->
+	</PropertyGroup>
 
 	<ItemGroup>
 		<InternalsVisibleTo Include="SearchCSharpTests" />
 	</ItemGroup>
-	
+
+	<!-- include files for packaging -->
 	<ItemGroup>
-		<ProjectReference Include="..\SearchCSharpAPI\SearchCSharpAPI.csproj" />
+		<None Include="README.md" Pack="true" PackagePath="" />
+		<None Include="../LICENSE" Pack="true" PackagePath="" />
 	</ItemGroup>
 	
 </Project>

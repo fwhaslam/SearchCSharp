@@ -1,0 +1,27 @@
+<Project>
+
+  <!-- properties shared by all projects in solution -->
+
+  <PropertyGroup>
+    
+    <!-- multi framework builds -->
+    <TargetFrameworks>net6.0</TargetFrameworks>
+    
+    <!--- '-alpha' means prerelease version -->
+    <Version>0.0.1</Version>
+    
+    <!-- name of project which contains the nupkg for deployment -->
+    <ProjectKey>SearchCSharp</ProjectKey>
+
+    <LangVersion>10.0</LangVersion>
+
+    <ReleaseNotes>
+# Release 0.0.1
+
+* initial construction of API, testing
+
+    </ReleaseNotes>
+    
+  </PropertyGroup>
+
+</Project>
